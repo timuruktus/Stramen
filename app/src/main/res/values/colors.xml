@@ -6,4 +6,5 @@
     <color name="colorTextLight">#f4f4f4</color>
     <color name="colorText">#282828</color>
     <color name="colorTextBold">#0e0e0e</color>
+    <color name="colorJoinButton">#64dd17</color>
 </resources>

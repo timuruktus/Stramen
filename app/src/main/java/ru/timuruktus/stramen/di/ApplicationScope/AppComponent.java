@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import dagger.Module;
+import ru.timuruktus.stramen.presentation.login.view.LoginFragment;
 import ru.timuruktus.stramen.presentation.main.presenter.MainPresenter;
 
 @Component(modules = {AppModule.class})
@@ -12,5 +13,6 @@ import ru.timuruktus.stramen.presentation.main.presenter.MainPresenter;
 public interface AppComponent{
 
     void inject(MainPresenter mainPresenter);
+    void inject(LoginFragment loginFragment);
 
 }

@@ -8,4 +8,21 @@ import ru.timuruktus.stramen.presentation.main.view.IMainActivity;
 
 @InjectViewState
 public class LoginPresenter extends MvpPresenter<ILoginFragment> implements ILoginPresenter{
+
+
+    public void onJoinButtonClicked(String email, String password){
+
+    }
+
+    public void onRegisterButtonClicked(){
+
+    }
+
+    public void onRestorePasswordClicked(){
+
+    }
+
+    public void onEmailRestoreRequested(String email){
+
+    }
 }
