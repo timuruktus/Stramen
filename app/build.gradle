@@ -14,8 +14,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    dataBinding {
-        enabled = true
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -72,3 +73,5 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
 
 }
+
+apply plugin: 'me.tatarka.retrolambda'

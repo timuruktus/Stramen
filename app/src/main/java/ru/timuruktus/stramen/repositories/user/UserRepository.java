@@ -40,6 +40,11 @@ public class UserRepository implements IUserRepository{
     }
 
     @Override
+    public void saveCurrentUser(CurrentUser currentUser){
+
+    }
+
+    @Override
     public Observable<List<IUser>> getAllUsersFromProject(String projectId){
         return null;
     }

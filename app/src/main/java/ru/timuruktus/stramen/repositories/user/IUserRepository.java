@@ -17,6 +17,7 @@ public interface IUserRepository{
     void clearUser(int id);
     void updateUser(IUser user);
     void replaceUser(IUser newUser, IUser oldUser);
+    void saveCurrentUser(CurrentUser currentUser);
 
     Observable<List<IUser>> getAllUsersFromProject(String projectId);
     Observable<List<IUser>> getAllUsersFromSubProject(String subProjectId);
