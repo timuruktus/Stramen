@@ -8,9 +8,9 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import ru.timuruktus.stramen.data.utils.IMetricUtils;
+import ru.timuruktus.stramen.data.utils.IDataConverter;
 import ru.timuruktus.stramen.data.utils.ISettings;
-import ru.timuruktus.stramen.data.utils.MetricUtils;
+import ru.timuruktus.stramen.data.utils.DataConverter;
 import ru.timuruktus.stramen.data.utils.Settings;
 
 @Module
@@ -36,7 +36,7 @@ public class AppModule{
 
     @Provides
     @Singleton
-    IMetricUtils provideMetricUtils(){
-        return new MetricUtils(context);
+    IDataConverter provideDataConverter(){
+        return new DataConverter(context);
     }
 }

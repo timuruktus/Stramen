@@ -24,7 +24,7 @@ public class CurrentUser extends BasicUser implements IUser{
     private String email;
     @SerializedName("registration_date")
     @Expose
-    private long registrationDate;
+    private String registrationDate;
     @SerializedName("avatar")
     @Expose
     private String avatar;
@@ -64,11 +64,11 @@ public class CurrentUser extends BasicUser implements IUser{
         this.email = email;
     }
 
-    public long getRegistrationDate() {
+    public String getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(long registrationDate) {
+    public void setRegistrationDate(String registrationDate) {
         this.registrationDate = registrationDate;
     }
 
