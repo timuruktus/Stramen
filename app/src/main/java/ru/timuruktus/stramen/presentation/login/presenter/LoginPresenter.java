@@ -19,10 +19,14 @@ public class LoginPresenter extends MvpPresenter<ILoginFragment> implements ILog
     }
 
     public void onRestorePasswordClicked(){
+        getViewState().showRestorePasswordDialog();
+    }
+
+    public void onPasswordRestoreRequested(String email){
 
     }
 
-    public void onEmailRestoreRequested(String email){
+    public void onDestroy(){
 
     }
 }

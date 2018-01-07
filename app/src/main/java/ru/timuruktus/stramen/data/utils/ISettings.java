@@ -1,4 +1,4 @@
-package ru.timuruktus.stramen.data.Utils;
+package ru.timuruktus.stramen.data.utils;
 
 public interface ISettings{
 

@@ -84,6 +84,12 @@ public class LoginFragment extends MvpAppCompatFragment implements ILoginFragmen
 
     @Override
     public void onEmailRestoreRequested(String email){
-        loginPresenter.onEmailRestoreRequested(email);
+        loginPresenter.onPasswordRestoreRequested(email);
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        loginPresenter.onDestroy();
     }
 }

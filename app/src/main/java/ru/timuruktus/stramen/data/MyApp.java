@@ -1,15 +1,13 @@
 package ru.timuruktus.stramen.data;
 
 import android.app.Application;
-import android.content.Context;
 
 import ru.terrakok.cicerone.Cicerone;
 import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.Router;
-import ru.timuruktus.stramen.R;
-import ru.timuruktus.stramen.di.ApplicationScope.AppComponent;
-import ru.timuruktus.stramen.di.ApplicationScope.AppModule;
-import ru.timuruktus.stramen.di.ApplicationScope.DaggerAppComponent;
+import ru.timuruktus.stramen.di.application_scope.AppComponent;
+import ru.timuruktus.stramen.di.application_scope.AppModule;
+import ru.timuruktus.stramen.di.application_scope.DaggerAppComponent;
 
 
 public class MyApp extends Application{

@@ -1,4 +1,4 @@
-package ru.timuruktus.stramen.di.ApplicationScope;
+package ru.timuruktus.stramen.di.application_scope;
 
 
 import android.content.Context;
@@ -8,10 +8,10 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import ru.timuruktus.stramen.data.Utils.IMetricUtils;
-import ru.timuruktus.stramen.data.Utils.ISettings;
-import ru.timuruktus.stramen.data.Utils.MetricUtils;
-import ru.timuruktus.stramen.data.Utils.Settings;
+import ru.timuruktus.stramen.data.utils.IMetricUtils;
+import ru.timuruktus.stramen.data.utils.ISettings;
+import ru.timuruktus.stramen.data.utils.MetricUtils;
+import ru.timuruktus.stramen.data.utils.Settings;
 
 @Module
 public class AppModule{

@@ -7,7 +7,7 @@ import com.arellomobile.mvp.MvpPresenter;
 import javax.inject.Inject;
 
 import ru.timuruktus.stramen.data.MyApp;
-import ru.timuruktus.stramen.data.Utils.ISettings;
+import ru.timuruktus.stramen.data.utils.ISettings;
 import ru.timuruktus.stramen.presentation.main.view.IMainActivity;
 
 import static ru.timuruktus.stramen.presentation.login.view.LoginFragment.LOGIN_TAG;

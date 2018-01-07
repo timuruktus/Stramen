@@ -1,9 +1,7 @@
-package ru.timuruktus.stramen.data.Utils;
+package ru.timuruktus.stramen.data.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import javax.inject.Inject;
 
 public class Settings implements ISettings{
 
