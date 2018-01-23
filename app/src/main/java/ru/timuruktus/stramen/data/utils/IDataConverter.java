@@ -4,6 +4,6 @@ import java.util.Date;
 
 public interface IDataConverter{
 
-    float convertDp2Px(float dp);
-    long date2Timestamp(Date date);
+    float convertDpToPx(float dp);
+    long dateToTimestamp(Date date);
 }

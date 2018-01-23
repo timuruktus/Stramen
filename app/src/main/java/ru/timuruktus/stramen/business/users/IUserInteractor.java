@@ -1,7 +1,7 @@
-package ru.timuruktus.stramen.business.login;
+package ru.timuruktus.stramen.business.users;
 
 import io.reactivex.Observable;
-import ru.timuruktus.stramen.models.users.CurrentUser;
+import ru.timuruktus.stramen.models.entities.CurrentUser;
 
 public interface IUserInteractor{
 

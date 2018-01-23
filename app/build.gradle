@@ -73,5 +73,3 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
 
 }
-
-apply plugin: 'me.tatarka.retrolambda'

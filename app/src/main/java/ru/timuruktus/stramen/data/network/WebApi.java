@@ -3,11 +3,10 @@ package ru.timuruktus.stramen.data.network;
 import java.util.Map;
 
 import io.reactivex.Observable;
-import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
-import ru.timuruktus.stramen.models.users.CurrentUser;
+import ru.timuruktus.stramen.models.entities.CurrentUser;
 
 public interface WebApi{
 

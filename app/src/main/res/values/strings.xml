@@ -9,6 +9,7 @@
     <string name="ok">OK</string>
     <string name="error">Ошибка</string>
     <string name="error_occurred">Произошла ошибка</string>
+    <string name="enter">Вход</string>
 
     <!--PASSWORD RESTORATION-->
     <string name="forgot_my_password"><u>Я забыл пароль, помогите</u></string>

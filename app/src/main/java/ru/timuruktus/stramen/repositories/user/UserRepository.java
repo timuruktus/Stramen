@@ -3,8 +3,8 @@ package ru.timuruktus.stramen.repositories.user;
 import java.util.List;
 
 import io.reactivex.Observable;
-import ru.timuruktus.stramen.models.users.CurrentUser;
-import ru.timuruktus.stramen.models.users.IUser;
+import ru.timuruktus.stramen.models.entities.CurrentUser;
+import ru.timuruktus.stramen.models.entities.IUser;
 
 public class UserRepository implements IUserRepository{
 
