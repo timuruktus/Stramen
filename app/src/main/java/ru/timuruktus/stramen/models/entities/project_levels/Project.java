@@ -4,6 +4,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = "project")
 public class Project implements IProject{
@@ -12,6 +13,7 @@ public class Project implements IProject{
     @Expose
     private String id;
     @Expose
+    @SerializedName("type")
     private int projectType;
     @Expose
     private String name;

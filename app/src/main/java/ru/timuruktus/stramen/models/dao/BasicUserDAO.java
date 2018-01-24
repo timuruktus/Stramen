@@ -9,6 +9,7 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
 import ru.timuruktus.stramen.models.entities.BasicUser;
 import rx.Observable;
 
@@ -31,5 +32,5 @@ public interface BasicUserDAO{
     void update(BasicUser user);
 
     @Query("SELECT * FROM basic_user")
-    Observable<List<BasicUser>> getAllPeople();
+    Flowable<List<BasicUser>> getAllPeople();
 }

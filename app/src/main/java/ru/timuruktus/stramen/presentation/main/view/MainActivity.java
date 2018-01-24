@@ -23,7 +23,7 @@ public class MainActivity extends MvpAppCompatActivity implements IMainActivity{
 
     @InjectPresenter
     MainPresenter presenter;
-    public static final String DEFAULT_TAG = "My Tag";
+    public static final String DEFAULT_TAG = "mytag";
 
 
     private Navigator navigator = new SupportFragmentNavigator(getSupportFragmentManager(),

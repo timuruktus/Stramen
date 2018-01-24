@@ -17,11 +17,13 @@ import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
 import butterknife.BindColor;
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import ru.timuruktus.stramen.R;
+import ru.timuruktus.stramen.data.MyApp;
 import ru.timuruktus.stramen.presentation.login.presenter.LoginPresenter;
 
 public class LoginFragment extends MvpAppCompatFragment implements ILoginFragment, RestoreDialogListener{
@@ -36,6 +38,9 @@ public class LoginFragment extends MvpAppCompatFragment implements ILoginFragmen
     @BindView(R.id.registerButton) Button registerButton;
     @BindColor(R.color.colorJoinButton) int colorJoinButton;
     @BindView(R.id.restorePassword) TextView restorePassword;
+    @BindString(R.string.email_is_sent) String emailIsSent;
+    @BindString(R.string.empty_email_field) String emptyEmailField;
+    @BindString(R.string.wrong_email_field) String wrongEmailField;
     private Unbinder unbinder;
     private Context context;
     public static final String LOGIN_TAG = "LoginTag";
@@ -78,12 +83,28 @@ public class LoginFragment extends MvpAppCompatFragment implements ILoginFragmen
 
     @Override
     public void showRestorePasswordDialog(){
-        DialogFragment newFragment = new RestorePasswordDialog();
-        newFragment.show(getFragmentManager(), "Restore Dialog");
+        DialogFragment restoreDialog = new RestorePasswordDialog();
+//        restoreDialog.setTargetFragment(this, 0);
+        restoreDialog.show(getChildFragmentManager(), "Restore Dialog");
     }
 
     @Override
-    public void onEmailRestoreRequested(String email){
+    public void showRestoreEmailHasBeenSent(){
+        MyApp.INSTANCE.getRouter().showSystemMessage(emailIsSent);
+    }
+
+    @Override
+    public void showEmailIsEmpty(){
+        MyApp.INSTANCE.getRouter().showSystemMessage(emptyEmailField);
+    }
+
+    @Override
+    public void showEmailIsWrong(){
+        MyApp.INSTANCE.getRouter().showSystemMessage(wrongEmailField);
+    }
+
+    @Override
+    public void onPasswordRestoreRequested(String email){
         loginPresenter.onPasswordRestoreRequested(email);
     }
 

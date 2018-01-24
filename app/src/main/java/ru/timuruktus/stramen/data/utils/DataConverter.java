@@ -18,7 +18,10 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 
+import ru.timuruktus.stramen.models.entities.project_levels.ICard;
+import ru.timuruktus.stramen.models.entities.project_levels.IPreviewCard;
 import ru.timuruktus.stramen.models.entities.project_levels.IProject;
+import ru.timuruktus.stramen.models.entities.project_levels.ISubProject;
 import ru.timuruktus.stramen.models.entities.utilite_settings.Timer;
 
 public class DataConverter implements IDataConverter{
@@ -30,6 +33,8 @@ public class DataConverter implements IDataConverter{
         this.context = context;
     }
 
+    public DataConverter(){
+    }
 
     public float convertDpToPx(float dp){
         Resources r = context.getResources();
@@ -113,14 +118,86 @@ public class DataConverter implements IDataConverter{
     }
 
     @TypeConverter
-    public List<IProject> fromStringToProjectList(String projectString){
-        if(projectString == null){
+    public List<IProject> fromStringToProjectList(String projectsString){
+        if(projectsString == null){
             return (null);
         }
         Gson gson = new Gson();
         Type type = new TypeToken<List<IProject>>(){
         }.getType();
-        List<IProject> countryLangList = gson.fromJson(projectString, type);
-        return countryLangList;
+        List<IProject> projectsList = gson.fromJson(projectsString, type);
+        return projectsList;
+    }
+
+    @TypeConverter
+    public String fromSubProjectListToString(List<ISubProject> projects){
+        if(projects == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        String json = gson.toJson(projects, type);
+        return json;
+    }
+
+    @TypeConverter
+    public List<ISubProject> fromStringToSubProjectList(String subProjectString){
+        if(subProjectString == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        List<ISubProject> subProjectList = gson.fromJson(subProjectString, type);
+        return subProjectList;
+    }
+
+    @TypeConverter
+    public String fromCardsListToString(List<ICard> cards){
+        if(cards == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        String json = gson.toJson(cards, type);
+        return json;
+    }
+
+    @TypeConverter
+    public List<ICard> fromStringToCardsList(String cardsString){
+        if(cardsString == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        List<ICard> cardsList = gson.fromJson(cardsString, type);
+        return cardsList;
+    }
+
+    @TypeConverter
+    public String fromPreviewCardsListToString(List<IPreviewCard> previewCards){
+        if(previewCards == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        String json = gson.toJson(previewCards, type);
+        return json;
+    }
+
+    @TypeConverter
+    public List<IPreviewCard> fromStringToPreviewCardsList(String previewCardsString){
+        if(previewCardsString == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        List<IPreviewCard> previewCardsList = gson.fromJson(previewCardsString, type);
+        return previewCardsList;
     }
 }

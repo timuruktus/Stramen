@@ -3,6 +3,7 @@ package ru.timuruktus.stramen.models.entities;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
+import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -21,6 +22,7 @@ public class BasicUser implements IUser{
     @SerializedName("id")
     @Expose
     @PrimaryKey
+    @NonNull
     private String id;
 
     @SerializedName("username")
@@ -39,8 +41,9 @@ public class BasicUser implements IUser{
     @Expose(serialize = false)
     private List<IProject> projects;
 
-    @TypeConverters(DataConverter.class)
+
     @Expose(serialize = false)
+    @TypeConverters(DataConverter.class)
     private List<ISubProject> subProjects;
 
     @TypeConverters(DataConverter.class)

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3d5afe</color>
-    <color name="colorPrimaryDark">#223394</color>
+    <color name="colorPrimaryDark">#3c4a97</color>
     <color name="colorAccent">#b71c1c</color>
     <color name="colorTextLight">#f4f4f4</color>
     <color name="colorText">#282828</color>
     <color name="colorTextBold">#0e0e0e</color>
-    <color name="colorJoinButton">#64dd17</color>
+    <color name="colorJoinButton">#7ecc4c</color>
+    <color name="transparent">#00000000</color>
 </resources>

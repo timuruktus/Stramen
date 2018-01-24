@@ -42,7 +42,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:ems="10"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="@font/roboto_thin"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:singleLine="true"
@@ -59,7 +59,7 @@
             app:layout_constraintEnd_toEndOf="@+id/loginSign"
             app:layout_constraintStart_toStartOf="@+id/loginSign"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/stramen_logo6"/>
+            app:srcCompat="@mipmap/stramen_logo6" android:contentDescription="TODO"/>
 
         <EditText
             android:id="@+id/passwordField"
@@ -70,7 +70,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:ems="10"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="@font/roboto_thin"
             android:hint="@string/password"
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="@+id/loginSign"
@@ -111,7 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:autoLink="none"
             android:fontFamily="@font/roboto"
             android:text="@string/forgot_my_password"
@@ -129,8 +129,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/enter"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/welcome"
             android:textColor="@color/colorText"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/loginSign"

@@ -10,9 +10,14 @@
     <string name="error">Ошибка</string>
     <string name="error_occurred">Произошла ошибка</string>
     <string name="enter">Вход</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="accept">Принять</string>
 
     <!--PASSWORD RESTORATION-->
     <string name="forgot_my_password"><u>Я забыл пароль, помогите</u></string>
     <string name="password_restore_dialog_title">Введите вашу почту ниже</string>
-    <string name="good_luck_to_restore">Удачи в восстановлении пароля!</string>
+    <string name="good_luck_to_restore">Удачи с восстановлением пароля!</string>
+    <string name="email_is_sent">Письмо с восстановлением отправлено на почту</string>
+    <string name="empty_email_field">Пустое поле почты!</string>
+    <string name="wrong_email_field">Неверная почта</string>
 </resources>

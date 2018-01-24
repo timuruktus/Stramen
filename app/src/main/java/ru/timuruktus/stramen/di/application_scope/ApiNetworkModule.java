@@ -2,6 +2,7 @@ package ru.timuruktus.stramen.di.application_scope;
 
 import javax.inject.Singleton;
 
+import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -10,6 +11,7 @@ import ru.timuruktus.stramen.data.network.WebApi;
 
 import static ru.timuruktus.stramen.data.network.WebApi.BASE_URL_OLD_API;
 
+@Module
 public class ApiNetworkModule{
 
 

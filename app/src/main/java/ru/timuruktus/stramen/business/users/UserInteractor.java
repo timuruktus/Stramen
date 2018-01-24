@@ -8,15 +8,20 @@ import javax.inject.Inject;
 import io.reactivex.Observable;
 import ru.timuruktus.stramen.data.network.WebApi;
 import ru.timuruktus.stramen.models.entities.CurrentUser;
+import ru.timuruktus.stramen.repositories.user.IUserRepository;
 import ru.timuruktus.stramen.repositories.user.UserRepository;
 
 public class UserInteractor implements IUserInteractor{
 
 
-    @Inject
     WebApi webApi; //needs to be injected
+    IUserRepository userRepository; //needs to be injected
+
     @Inject
-    UserRepository userRepository; //needs to be injected
+    public UserInteractor(WebApi webApi, IUserRepository userRepository){
+        this.webApi = webApi;
+        this.userRepository = userRepository;
+    }
 
     @Override
     public Observable<CurrentUser> loginUser(String email, String password){
@@ -28,4 +33,7 @@ public class UserInteractor implements IUserInteractor{
             return currentUser;
         });
     }
+
+
+
 }

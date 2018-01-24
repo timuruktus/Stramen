@@ -13,7 +13,7 @@ import ru.timuruktus.stramen.presentation.main.presenter.MainPresenter;
 @Singleton
 public interface AppComponent{
 
-    UserComponent addUserComponent(UserModule userModule);
+    UserComponent plusUserComponent(UserModule userModule);
 
     void inject(MainPresenter mainPresenter);
 

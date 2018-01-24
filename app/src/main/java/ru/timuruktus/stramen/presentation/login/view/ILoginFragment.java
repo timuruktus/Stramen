@@ -8,4 +8,13 @@ public interface ILoginFragment extends MvpView{
 
     @StateStrategyType(OneExecutionStateStrategy.class)
     void showRestorePasswordDialog();
+
+    @StateStrategyType(OneExecutionStateStrategy.class)
+    void showRestoreEmailHasBeenSent();
+
+    @StateStrategyType(OneExecutionStateStrategy.class)
+    void showEmailIsEmpty();
+
+    @StateStrategyType(OneExecutionStateStrategy.class)
+    void showEmailIsWrong();
 }

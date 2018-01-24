@@ -27,8 +27,8 @@ public class RestorePasswordDialog extends DialogFragment{
 
     @BindView(R.id.dialogTitle) TextView dialogTitle;
     @BindView(R.id.emailField) EditText emailField;
-    @BindView(R.id.okButton) Button okButton;
-    @BindView(R.id.cancelButton) Button cancelButton;
+    @BindView(R.id.accept) TextView accept;
+    @BindView(R.id.cancel) TextView cancel;
     @BindView(R.id.dialogGoodLuck) TextView dialogGoodLuck;
     @BindString(R.string.error_occurred) String errorOccurred;
     Unbinder unbinder;
@@ -51,11 +51,18 @@ public class RestorePasswordDialog extends DialogFragment{
         unbinder.unbind();
     }
 
-    @OnClick({R.id.okButton, R.id.cancelButton})
+    @OnClick({R.id.accept, R.id.cancel})
     public void onViewClicked(View view){
         RestoreDialogListener listener;
+//        getTargetFragment()
         try{
-            listener = (RestoreDialogListener) getActivity();
+            if(getParentFragment() == null){
+                Log.e(DEFAULT_TAG, "parent fragment == null");
+                listener = (RestoreDialogListener) getActivity();
+            }else{
+                Log.e(DEFAULT_TAG, "parent fragment != null");
+                listener = (RestoreDialogListener) getParentFragment();
+            }
         }catch(ClassCastException ex){
             Log.e(DEFAULT_TAG, "RestorePasswordDialog wrong listener!");
             MyApp.INSTANCE.getRouter().showSystemMessage(errorOccurred);
@@ -64,10 +71,11 @@ public class RestorePasswordDialog extends DialogFragment{
         }
 
         switch(view.getId()){
-            case R.id.okButton:
-                    listener.onEmailRestoreRequested(emailField.getText().toString());
+            case R.id.accept:
+                listener.onPasswordRestoreRequested(emailField.getText().toString());
+                dismiss();
                 break;
-            case R.id.cancelButton:
+            case R.id.cancel:
                 dismiss();
                 break;
         }

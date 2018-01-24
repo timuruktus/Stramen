@@ -5,6 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = "sub_project")
 public class SubProject implements ISubProject{
@@ -21,6 +22,7 @@ public class SubProject implements ISubProject{
     @Expose
     private String strategy;
     @Expose
+    @SerializedName("project_id")
     private String projectId;
 
     public SubProject(){

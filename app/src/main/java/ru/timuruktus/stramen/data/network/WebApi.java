@@ -16,4 +16,6 @@ public interface WebApi{
     @FormUrlEncoded
     @POST("clients/auth_jwt/")
     Observable<CurrentUser> authorize(@FieldMap Map<String, String> params);
+
+    //TODO Восстановление почты
 }
