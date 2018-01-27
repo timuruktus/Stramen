@@ -1,4 +1,4 @@
-package ru.timuruktus.stramen.presentation.main.view;
+package ru.timuruktus.stramen.presentation.main;
 
 import com.arellomobile.mvp.MvpView;
 

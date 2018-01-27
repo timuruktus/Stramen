@@ -9,19 +9,9 @@ import com.google.gson.annotations.SerializedName;
 @Entity(tableName = "current_user")
 public class CurrentUser extends BasicUser implements IUser{
 
-    @SerializedName("url")
     @Expose
     private String url;
 
-    @SerializedName("id")
-    @Expose
-    private String id;
-
-    @SerializedName("username")
-    @Expose
-    private String username;
-
-    @SerializedName("email")
     @Expose
     @PrimaryKey
     private String email;
@@ -30,15 +20,28 @@ public class CurrentUser extends BasicUser implements IUser{
     @Expose
     private String registrationDate;
 
-    @SerializedName("avatar")
-    @Expose
-    private String avatar;
-
     @SerializedName("jw_token")
     @Expose(serialize = false)
     private String jwToken;
 
     public CurrentUser(){
+    }
+
+    public CurrentUser(String url, String id, String username, String email, String registrationDate, String avatar, String jwToken){
+        this.url = url;
+        this.email = email;
+        this.registrationDate = registrationDate;
+        this.jwToken = jwToken;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + " CurrentUser{" +
+                "url='" + url + '\'' +
+                ", email='" + email + '\'' +
+                ", registrationDate='" + registrationDate + '\'' +
+                ", jwToken='" + jwToken + '\'' +
+                '}';
     }
 
     public String getUrl() {
@@ -47,22 +50,6 @@ public class CurrentUser extends BasicUser implements IUser{
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getEmail() {
@@ -79,14 +66,6 @@ public class CurrentUser extends BasicUser implements IUser{
 
     public void setRegistrationDate(String registrationDate) {
         this.registrationDate = registrationDate;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
     }
 
     public String getJwToken() {

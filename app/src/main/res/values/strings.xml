@@ -3,8 +3,9 @@
 
     <string name="password">Пароль</string>
     <string name="email">Почта</string>
+    <string name="username">Логин</string>
     <string name="join">Войти</string>
-    <string name="register">Регистрация</string>
+    <string name="registration">Регистрация</string>
     <string name="cancel">Отмена</string>
     <string name="ok">OK</string>
     <string name="error">Ошибка</string>
@@ -12,6 +13,10 @@
     <string name="enter">Вход</string>
     <string name="welcome">Добро пожаловать</string>
     <string name="accept">Принять</string>
+    <string name="back">Назад</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="empty_field">Пустое поле</string>
+    <string name="internet_connection_error">Отсутствует интернет соединение</string>
 
     <!--PASSWORD RESTORATION-->
     <string name="forgot_my_password"><u>Я забыл пароль, помогите</u></string>
@@ -20,4 +25,18 @@
     <string name="email_is_sent">Письмо с восстановлением отправлено на почту</string>
     <string name="empty_email_field">Пустое поле почты!</string>
     <string name="wrong_email_field">Неверная почта</string>
+
+    <!--LOGIN-->
+    <string name="wrong_login_data">Ошибка. Проверьте правильность ввода почты и пароля</string>
+
+    <!--REGISTRATION-->
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="passwords_match_error">Пароли не совпадают!</string>
+    <string name="confirm_password">Подтвердите почту для активации аккаунта</string>
+    <string name="mythical_error_happened">Произошла мистическая ошибка! Попробуйте изменить поля</string>
+
+    <!--PROJECTS-->
+    <string name="create_new_project">Создать новый проект</string>
+    <string name="find_new_project">Найти проект</string>
+
 </resources>

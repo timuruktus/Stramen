@@ -53,6 +53,18 @@ public class BasicUser implements IUser{
     public BasicUser(){
     }
 
+    @Override
+    public String toString(){
+        return "BasicUser{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", post='" + post + '\'' +
+                ", projects=" + projects +
+                ", subProjects=" + subProjects +
+                ", cards=" + cards +
+                '}';
+    }
 
     public String getId() {
         return id;

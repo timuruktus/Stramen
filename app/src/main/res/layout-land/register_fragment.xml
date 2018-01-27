@@ -25,15 +25,14 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/registrationSign"
-            android:layout_width="0dp"
-            android:layout_height="375dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_marginBottom="128dp"
-            android:layout_marginEnd="24dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/login_sign_background"
+            android:paddingBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -126,15 +125,19 @@
             android:id="@+id/register"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/join_button_background"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="@string/register"
             android:textColor="@color/colorTextLight"
-            app:layout_constraintEnd_toEndOf="@+id/registrationSign"
-            app:layout_constraintStart_toStartOf="@+id/registrationSign"
-            app:layout_constraintTop_toBottomOf="@+id/registrationSign"/>
+            app:layout_constraintBottom_toBottomOf="@+id/registrationSign"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/registrationSign"
+            app:layout_constraintTop_toTopOf="@+id/registrationSign"/>
 
         <Button
             android:id="@+id/back"

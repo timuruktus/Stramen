@@ -1,4 +1,4 @@
-package ru.timuruktus.stramen.presentation.login.view;
+package ru.timuruktus.stramen.presentation.login;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.appolica.flubber.Flubber;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
@@ -24,26 +24,29 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import ru.timuruktus.stramen.R;
 import ru.timuruktus.stramen.data.MyApp;
-import ru.timuruktus.stramen.presentation.login.presenter.LoginPresenter;
 
 public class LoginFragment extends MvpAppCompatFragment implements ILoginFragment, RestoreDialogListener{
 
-    @InjectPresenter
-    public LoginPresenter loginPresenter;
-    @BindView(R.id.loginSign) LinearLayout loginSign;
+
+//    @BindView(R.id.loginSign) LinearLayout loginSign;
     @BindView(R.id.emailField) EditText emailField;
     @BindView(R.id.logo) ImageView logo;
     @BindView(R.id.passwordField) EditText passwordField;
     @BindView(R.id.joinButton) Button joinButton;
     @BindView(R.id.registerButton) Button registerButton;
-    @BindColor(R.color.colorJoinButton) int colorJoinButton;
+    @BindColor(R.color.greenAcceptColor) int colorJoinButton;
     @BindView(R.id.restorePassword) TextView restorePassword;
     @BindString(R.string.email_is_sent) String emailIsSent;
     @BindString(R.string.empty_email_field) String emptyEmailField;
+    @BindString(R.string.empty_field) String emptyField;
+    @BindString(R.string.wrong_login_data) String wrongLoginData;
+    @BindString(R.string.internet_connection_error) String internetConnectionError;
     @BindString(R.string.wrong_email_field) String wrongEmailField;
     private Unbinder unbinder;
     private Context context;
     public static final String LOGIN_TAG = "LoginTag";
+    @InjectPresenter
+    public LoginPresenter loginPresenter;
 
     public static LoginFragment getInstance(){
         return new LoginFragment();
@@ -104,8 +107,41 @@ public class LoginFragment extends MvpAppCompatFragment implements ILoginFragmen
     }
 
     @Override
+    public void showAppearAnimations(){
+        Flubber.with()
+                .animation(Flubber.AnimationPreset.FADE_IN_RIGHT)
+                .interpolator(Flubber.Curve.SPRING)
+                .duration(1000)
+                .autoStart(true)
+                .createFor(logo);
+
+    }
+
+    @Override
+    public void showWrongLoginData(){
+        MyApp.INSTANCE.getRouter().showSystemMessage(wrongLoginData);
+        passwordField.setText("");
+    }
+
+    @Override
+    public void showInternetConnectionError(){
+        MyApp.INSTANCE.getRouter().showSystemMessage(internetConnectionError);
+    }
+
+    @Override
+    public void showEmailEmptyError(){
+        emailField.setError(emptyField);
+    }
+
+    @Override
+    public void showPasswordEmptyError(){
+        passwordField.setError(emptyField);
+    }
+
+    @Override
     public void onPasswordRestoreRequested(String email){
         loginPresenter.onPasswordRestoreRequested(email);
+
     }
 
     @Override

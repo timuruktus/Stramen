@@ -1,4 +1,4 @@
-package ru.timuruktus.stramen.presentation.main.presenter;
+package ru.timuruktus.stramen.presentation.main;
 
 
 import com.arellomobile.mvp.InjectViewState;
@@ -8,9 +8,8 @@ import javax.inject.Inject;
 
 import ru.timuruktus.stramen.data.MyApp;
 import ru.timuruktus.stramen.data.utils.ISettings;
-import ru.timuruktus.stramen.presentation.main.view.IMainActivity;
 
-import static ru.timuruktus.stramen.presentation.login.view.LoginFragment.LOGIN_TAG;
+import static ru.timuruktus.stramen.presentation.login.LoginFragment.LOGIN_TAG;
 
 @InjectViewState
 public class MainPresenter extends MvpPresenter<IMainActivity> implements IMainPresenter{
@@ -25,6 +24,7 @@ public class MainPresenter extends MvpPresenter<IMainActivity> implements IMainP
         if(settings.isFirstOpen()){
             MyApp.INSTANCE.getRouter().newRootScreen(LOGIN_TAG);
         }else{
+            MyApp.INSTANCE.getRouter().newRootScreen(LOGIN_TAG);
             //TODO
         }
     }

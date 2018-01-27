@@ -1,22 +1,25 @@
-package ru.timuruktus.stramen.presentation.login.presenter;
+package ru.timuruktus.stramen.presentation.login;
 
 import android.util.Log;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
+import java.net.ConnectException;
+
 import javax.inject.Inject;
 
+import butterknife.BindString;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import ru.timuruktus.stramen.R;
 import ru.timuruktus.stramen.business.users.IUserInteractor;
-import ru.timuruktus.stramen.business.users.UserInteractor;
 import ru.timuruktus.stramen.data.MyApp;
 import ru.timuruktus.stramen.models.entities.CurrentUser;
-import ru.timuruktus.stramen.presentation.login.view.ILoginFragment;
-import ru.timuruktus.stramen.presentation.main.view.IMainActivity;
 
-import static ru.timuruktus.stramen.presentation.main.view.MainActivity.DEFAULT_TAG;
+import static ru.timuruktus.stramen.presentation.main.MainActivity.DEFAULT_TAG;
+import static ru.timuruktus.stramen.presentation.main.MainActivity.TESTING_TAG;
+import static ru.timuruktus.stramen.presentation.registration.RegistrationFragment.REGISTRATION_TAG;
 
 @InjectViewState
 public class LoginPresenter extends MvpPresenter<ILoginFragment> implements ILoginPresenter{
@@ -29,25 +32,34 @@ public class LoginPresenter extends MvpPresenter<ILoginFragment> implements ILog
     protected void onFirstViewAttach(){
         super.onFirstViewAttach();
         MyApp.INSTANCE.plusUserComponent().inject(this);
+        getViewState().showAppearAnimations();
     }
 
     public void onJoinButtonClicked(String email, String password){
+
+        if(!allFieldsAreFilled(email, password)){
+            return;
+        }
+
         userInteractor.loginUser(email, password).subscribe(new Observer<CurrentUser>(){
             @Override
-            public void onSubscribe(Disposable d){
-
-            }
+            public void onSubscribe(Disposable d){}
 
             @Override
             public void onNext(CurrentUser currentUser){
-
+                Log.d(TESTING_TAG, currentUser.toString());
             }
 
             @Override
             public void onError(Throwable e){
                 e.printStackTrace();
-                Log.d(DEFAULT_TAG, e.getMessage());
+                if(e instanceof ConnectException){
+                    getViewState().showInternetConnectionError();
+                }else{
+                    getViewState().showWrongLoginData();
+                }
             }
+
 
             @Override
             public void onComplete(){
@@ -58,7 +70,7 @@ public class LoginPresenter extends MvpPresenter<ILoginFragment> implements ILog
     }
 
     public void onRegisterButtonClicked(){
-
+        MyApp.INSTANCE.getRouter().navigateTo(REGISTRATION_TAG);
     }
 
     public void onRestorePasswordClicked(){
@@ -68,12 +80,28 @@ public class LoginPresenter extends MvpPresenter<ILoginFragment> implements ILog
     public void onPasswordRestoreRequested(String email){
         if(email.isEmpty()){
             getViewState().showEmailIsEmpty();
+            return;
         }
         getViewState().showRestoreEmailHasBeenSent();
-        //TODO
+        userInteractor.resetPassword(email);
     }
 
     public void onDestroy(){
         MyApp.INSTANCE.clearUserComponent();
+    }
+
+    private boolean allFieldsAreFilled(String email, String password){
+        boolean fieldsFilled = true;
+        if(email.isEmpty()){
+            getViewState().showEmailEmptyError();
+            fieldsFilled = false;
+        }
+
+        if(password.isEmpty()){
+            getViewState().showPasswordEmptyError();
+            fieldsFilled = false;
+        }
+
+        return fieldsFilled;
     }
 }

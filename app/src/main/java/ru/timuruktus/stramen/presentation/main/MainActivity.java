@@ -1,4 +1,4 @@
-package ru.timuruktus.stramen.presentation.main.view;
+package ru.timuruktus.stramen.presentation.main;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -13,10 +13,11 @@ import ru.terrakok.cicerone.android.SupportFragmentNavigator;
 import ru.terrakok.cicerone.commands.Command;
 import ru.timuruktus.stramen.R;
 import ru.timuruktus.stramen.data.MyApp;
-import ru.timuruktus.stramen.presentation.login.view.LoginFragment;
-import ru.timuruktus.stramen.presentation.main.presenter.MainPresenter;
+import ru.timuruktus.stramen.presentation.login.LoginFragment;
+import ru.timuruktus.stramen.presentation.registration.RegistrationFragment;
 
-import static ru.timuruktus.stramen.presentation.login.view.LoginFragment.LOGIN_TAG;
+import static ru.timuruktus.stramen.presentation.login.LoginFragment.LOGIN_TAG;
+import static ru.timuruktus.stramen.presentation.registration.RegistrationFragment.REGISTRATION_TAG;
 
 public class MainActivity extends MvpAppCompatActivity implements IMainActivity{
 
@@ -24,6 +25,8 @@ public class MainActivity extends MvpAppCompatActivity implements IMainActivity{
     @InjectPresenter
     MainPresenter presenter;
     public static final String DEFAULT_TAG = "mytag";
+    public static final String TESTING_TAG = "testingtag";
+
 
 
     private Navigator navigator = new SupportFragmentNavigator(getSupportFragmentManager(),
@@ -33,6 +36,8 @@ public class MainActivity extends MvpAppCompatActivity implements IMainActivity{
             switch(fragmentTag){
                 case(LOGIN_TAG):
                     return LoginFragment.getInstance();
+                case(REGISTRATION_TAG):
+                    return RegistrationFragment.getInstance();
                 default:
                     throw new RuntimeException("Unknown screen key!");
             }

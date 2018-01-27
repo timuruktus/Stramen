@@ -2,10 +2,14 @@
 <resources>
     <color name="colorPrimary">#3d5afe</color>
     <color name="colorPrimaryDark">#3c4a97</color>
-    <color name="colorAccent">#b71c1c</color>
+    <color name="colorAccent">#521cb7</color>
     <color name="colorTextLight">#f4f4f4</color>
     <color name="colorText">#282828</color>
     <color name="colorTextBold">#0e0e0e</color>
-    <color name="colorJoinButton">#7ecc4c</color>
+    <color name="greenAcceptColor">#7ecc4c</color>
+    <color name="redDeclineColor">#cc4c4e</color>
+    <color name="blueAttentionColor">#4c66cc</color>
     <color name="transparent">#00000000</color>
+    <color name="lightGray">#dedede</color>
+    <color name="white">#ffffff</color>
 </resources>

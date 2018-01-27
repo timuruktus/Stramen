@@ -1,4 +1,4 @@
-package ru.timuruktus.stramen.presentation.login.view;
+package ru.timuruktus.stramen.presentation.login;
 
 public interface RestoreDialogListener{
 

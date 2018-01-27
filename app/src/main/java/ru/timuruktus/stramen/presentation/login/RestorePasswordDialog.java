@@ -1,4 +1,4 @@
-package ru.timuruktus.stramen.presentation.login.view;
+package ru.timuruktus.stramen.presentation.login;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,7 +19,7 @@ import butterknife.Unbinder;
 import ru.timuruktus.stramen.R;
 import ru.timuruktus.stramen.data.MyApp;
 
-import static ru.timuruktus.stramen.presentation.main.view.MainActivity.DEFAULT_TAG;
+import static ru.timuruktus.stramen.presentation.main.MainActivity.DEFAULT_TAG;
 
 
 public class RestorePasswordDialog extends DialogFragment{
@@ -54,13 +54,12 @@ public class RestorePasswordDialog extends DialogFragment{
     @OnClick({R.id.accept, R.id.cancel})
     public void onViewClicked(View view){
         RestoreDialogListener listener;
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 //        getTargetFragment()
         try{
             if(getParentFragment() == null){
-                Log.e(DEFAULT_TAG, "parent fragment == null");
                 listener = (RestoreDialogListener) getActivity();
             }else{
-                Log.e(DEFAULT_TAG, "parent fragment != null");
                 listener = (RestoreDialogListener) getParentFragment();
             }
         }catch(ClassCastException ex){

@@ -16,8 +16,8 @@
         android:theme="@style/AppTheme"
         android:name="ru.timuruktus.stramen.data.MyApp">
 
-        <activity android:name=".presentation.main.view.MainActivity"
-                  android:windowSoftInputMode="stateHidden|adjustPan">
+        <activity android:name=".presentation.main.MainActivity"
+                  android:windowSoftInputMode="stateHidden|adjustResize">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

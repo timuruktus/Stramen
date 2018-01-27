@@ -1,14 +1,16 @@
-package ru.timuruktus.stramen.models.network_bodies;
+package ru.timuruktus.stramen.models.network_entities;
 
-public class AuthBody{
+public class LoginBody{
 
     private String email;
     private String password;
 
-
-    public AuthBody(String email, String password){
+    public LoginBody(String email, String password){
         this.email = email;
         this.password = password;
+    }
+
+    public LoginBody(){
     }
 
     public String getEmail(){
@@ -26,5 +28,4 @@ public class AuthBody{
     public void setPassword(String password){
         this.password = password;
     }
-
 }
