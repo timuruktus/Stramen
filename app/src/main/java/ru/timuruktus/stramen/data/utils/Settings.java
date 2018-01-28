@@ -7,6 +7,7 @@ public class Settings implements ISettings{
 
     private static final String APP_PREFERENCES = "mySettings";
     private static final String FIRST_OPEN = "firstOpen";
+    private static final String INTRO_OPEN = "introOpen";
 
     private SharedPreferences settings;
 
@@ -25,6 +26,16 @@ public class Settings implements ISettings{
     @Override
     public void setFirstOpen(boolean firstSign) {
         writeBooleanValue(FIRST_OPEN, firstSign);
+    }
+
+    @Override
+    public boolean shouldShowIntro(){
+        return getBooleanValue(INTRO_OPEN, true);
+    }
+
+    @Override
+    public void setShouldShowIntro(boolean firstSign){
+        writeBooleanValue(INTRO_OPEN, firstSign);
     }
 
     /**

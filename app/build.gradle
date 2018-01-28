@@ -79,5 +79,7 @@ dependencies {
 
     implementation 'com.github.devahamed:multi-view-adapter:1.2.6'
 
+    implementation 'agency.tango.android:material-intro-screen:0.0.5'
+
 
 }

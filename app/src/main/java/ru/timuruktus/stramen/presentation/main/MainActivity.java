@@ -1,5 +1,6 @@
 package ru.timuruktus.stramen.presentation.main;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import ru.terrakok.cicerone.android.SupportFragmentNavigator;
 import ru.terrakok.cicerone.commands.Command;
 import ru.timuruktus.stramen.R;
 import ru.timuruktus.stramen.data.MyApp;
+import ru.timuruktus.stramen.presentation.intro.IntroActivity;
 import ru.timuruktus.stramen.presentation.login.LoginFragment;
 import ru.timuruktus.stramen.presentation.registration.RegistrationFragment;
 
@@ -79,4 +81,9 @@ public class MainActivity extends MvpAppCompatActivity implements IMainActivity{
     }
 
 
+    @Override
+    public void startIntroActivity(){
+        Intent intent = new Intent(this, IntroActivity.class);
+        startActivity(intent);
+    }
 }

@@ -21,6 +21,10 @@ public class MainPresenter extends MvpPresenter<IMainActivity> implements IMainP
     protected void onFirstViewAttach(){
         super.onFirstViewAttach();
         MyApp.INSTANCE.getAppComponent().inject(this);
+        if(settings.shouldShowIntro()){
+            getViewState().startIntroActivity();
+            return;
+        }
         if(settings.isFirstOpen()){
             MyApp.INSTANCE.getRouter().newRootScreen(LOGIN_TAG);
         }else{
