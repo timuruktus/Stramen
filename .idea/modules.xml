@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Stramen.iml" filepath="$PROJECT_DIR$/Stramen.iml" />
+      <module fileurl="file://C:\Users\timuruktus\Desktop\STRAMEN\Stramen\Stramen.iml" filepath="C:\Users\timuruktus\Desktop\STRAMEN\Stramen\Stramen.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\timuruktus\Desktop\STRAMEN\Stramen\app\app.iml" filepath="C:\Users\timuruktus\Desktop\STRAMEN\Stramen\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/material-intro-screen/material-intro-screen.iml" filepath="$PROJECT_DIR$/material-intro-screen/material-intro-screen.iml" />
     </modules>
   </component>
 </project>
