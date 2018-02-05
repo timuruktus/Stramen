@@ -3,6 +3,7 @@ package ru.timuruktus.stramen.models.entities.project_levels;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.google.gson.annotations.Expose;
@@ -20,6 +21,7 @@ public class Card implements ICard{
 
     @PrimaryKey
     @Expose
+    @NonNull
     private String id;
     @SerializedName("type")
     @Expose
@@ -40,9 +42,11 @@ public class Card implements ICard{
     @TypeConverters(DataConverter.class)
     private Timer timer;
     @Expose
+    @TypeConverters(DataConverter.class)
     private List<IMark> marks;
     @Expose
     @SerializedName("todo_list")
+    @TypeConverters(DataConverter.class)
     private List<IToDoList> toDoList;
     @Expose
     @SerializedName("chat_id")

@@ -73,7 +73,7 @@ public class SlideFragment extends ParallaxFragment {
     public void initializeView() {
         Bundle bundle = getArguments();
         backgroundColor = bundle.getInt(BACKGROUND_COLOR);
-        buttonsColor = bundle.getInt(BUTTONS_COLOR);
+        buttonsColor = R.color.semiTransparent;
         image = bundle.getInt(IMAGE, 0);
         title = bundle.getString(TITLE);
         description = bundle.getString(DESCRIPTION);

@@ -26,7 +26,7 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:gravity="center"
-        app:layout_parallaxFactor="0.8"
+        app:layout_parallaxFactor="0.7"
         tools:src="@android:drawable/sym_action_call"/>
 
     <TextView

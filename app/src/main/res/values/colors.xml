@@ -12,4 +12,11 @@
     <color name="transparent">#00000000</color>
     <color name="lightGray">#dedede</color>
     <color name="white">#ffffff</color>
+
+    <!--INTRO SLIDES -->
+    <color name="slide1">#558bce</color>
+    <color name="slide2">#008f73</color>
+    <color name="slide3">#4bb70a</color>
+
 </resources>
+

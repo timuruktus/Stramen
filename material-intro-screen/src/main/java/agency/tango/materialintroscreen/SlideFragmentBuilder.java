@@ -18,6 +18,7 @@ public class SlideFragmentBuilder {
         return this;
     }
 
+    @Deprecated
     public SlideFragmentBuilder buttonsColor(@ColorRes int buttonsColor) {
         this.buttonsColor = buttonsColor;
         return this;

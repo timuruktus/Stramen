@@ -13,7 +13,6 @@ public class CurrentUser extends BasicUser implements IUser{
     private String url;
 
     @Expose
-    @PrimaryKey
     private String email;
 
     @SerializedName("registration_date")

@@ -9,6 +9,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import javax.inject.Inject;
+
 import agency.tango.materialintroscreen.MaterialIntroActivity;
 import agency.tango.materialintroscreen.MessageButtonBehaviour;
 import agency.tango.materialintroscreen.SlideFragmentBuilder;
@@ -16,6 +18,8 @@ import butterknife.BindString;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import ru.timuruktus.stramen.R;
+import ru.timuruktus.stramen.data.MyApp;
+import ru.timuruktus.stramen.data.utils.ISettings;
 import ru.timuruktus.stramen.presentation.main.MainActivity;
 
 public class IntroActivity extends MaterialIntroActivity{
@@ -27,12 +31,14 @@ public class IntroActivity extends MaterialIntroActivity{
     private String businessTitle;
     private String businessAdvantages;
     private String welcome;
+    @Inject ISettings settings;
 
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MyApp.INSTANCE.getAppComponent().inject(this);
         initAllResources();
         addAllSlides();
     }
@@ -50,26 +56,21 @@ public class IntroActivity extends MaterialIntroActivity{
 
     public void addAllSlides(){
         addSlide(new SlideFragmentBuilder()
-                        .backgroundColor(R.color.colorPrimary)
-                        .buttonsColor(R.color.blueAttentionColor)
+                        .backgroundColor(R.color.slide1)
                         .image(R.drawable.ic_chat)
                         .title(chatTitle)
                         .description(chatAdvantages)
                         .build());
 
         addSlide(new SlideFragmentBuilder()
-                .backgroundColor(R.color.redDeclineColor)
-                .buttonsColor(R.color.blueAttentionColor)
+                .backgroundColor(R.color.slide2)
                 .image(R.drawable.ic_checklist)
                 .title(taskTitle)
                 .description(taskAdvantages)
                 .build());
 
-        addSlide(IntroFragment.getInstance(R.drawable.ic_chat, chatTitle, chatAdvantages, R.color.colorPrimary));
-
         addSlide(new SlideFragmentBuilder()
-                .backgroundColor(R.color.greenAcceptColor)
-                .buttonsColor(R.color.blueAttentionColor)
+                .backgroundColor(R.color.slide3)
                 .image(R.drawable.ic_business_grow)
                 .title(businessTitle)
                 .description(businessAdvantages)
@@ -77,6 +78,7 @@ public class IntroActivity extends MaterialIntroActivity{
                 new MessageButtonBehaviour(v -> {
                     Intent intent = new Intent(IntroActivity.this, MainActivity.class);
                     startActivity(intent);
+                    settings.setShouldShowIntro(false);
                 }, welcome));
 
 

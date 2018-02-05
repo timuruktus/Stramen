@@ -4,6 +4,7 @@ package ru.timuruktus.stramen.models.entities.project_levels;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.google.gson.annotations.Expose;
@@ -20,6 +21,7 @@ public class PreviewCard implements IPreviewCard{
 
     @PrimaryKey
     @Expose
+    @NonNull
     private String id;
     @SerializedName("type")
     @Expose
@@ -40,6 +42,7 @@ public class PreviewCard implements IPreviewCard{
     @Expose
     private int priority;
     @Expose
+    @TypeConverters(DataConverter.class)
     private List<IMark> marks;
     @SerializedName("sub_project_id")
     private String subProjectId;
@@ -118,5 +121,13 @@ public class PreviewCard implements IPreviewCard{
 
     public void setTimer(Timer timer){
         this.timer = timer;
+    }
+
+    public String getSubProjectId(){
+        return subProjectId;
+    }
+
+    public void setSubProjectId(String subProjectId){
+        this.subProjectId = subProjectId;
     }
 }

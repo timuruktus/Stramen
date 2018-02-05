@@ -10,9 +10,12 @@ import android.view.ViewGroup;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import ru.timuruktus.stramen.R;
+import ru.timuruktus.stramen.models.entities.project_levels.IProject;
 
 
 public class ProjectsFragment extends MvpAppCompatFragment implements IProjectsFragment{
@@ -36,5 +39,20 @@ public class ProjectsFragment extends MvpAppCompatFragment implements IProjectsF
         unbinder = ButterKnife.bind(this, view);
         context = view.getContext();
         return view;
+    }
+
+    @Override
+    public void showEmptyPlaceholder(){
+
+    }
+
+    @Override
+    public void showErrorPlaceholder(){
+
+    }
+
+    @Override
+    public void showProjects(List<IProject> projects){
+
     }
 }

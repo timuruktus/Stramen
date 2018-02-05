@@ -6,6 +6,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 import ru.timuruktus.stramen.di.user_scope.UserComponent;
 import ru.timuruktus.stramen.di.user_scope.UserModule;
+import ru.timuruktus.stramen.presentation.intro.IntroActivity;
 import ru.timuruktus.stramen.presentation.main.MainPresenter;
 
 @Component(modules = {AppModule.class, ApiNetworkModule.class})
@@ -15,5 +16,6 @@ public interface AppComponent{
     UserComponent plusUserComponent(UserModule userModule);
 
     void inject(MainPresenter mainPresenter);
+    void inject(IntroActivity introActivity);
 
 }

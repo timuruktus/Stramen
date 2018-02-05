@@ -42,11 +42,11 @@
     <!--INTRO-->
     <string name="chat_title">Мгновенные чаты</string>
     <string name="chat_advantages">Мы предоставляем надежный, быстрый и функциональный
-        инструмент общения. Используйте его для коммуникации в своей компании</string>
+        инструмент общения. Используйте его для коммуникации в своей команде</string>
     <string name="task_title">Распределенные задачи</string>
-    <string name="task_advantages">Делегируйте и дробите задачи. Используйте
+    <string name="task_advantages">Дробите и делегируйте задачи. Используйте
     различные методологии для повышения эффективности</string>
-    <string name="business_title">Экономьте время</string>
+    <string name="business_title">Экономия времени</string>
     <string name="business_advantages">Каждая сэкономленная секунда конвертируется
     в деньги. Мы помогаем вам приумножать ваш капитал</string>
 

@@ -11,7 +11,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/lightGray">
 
         <View
@@ -27,7 +27,6 @@
             android:id="@+id/registrationSign"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:layout_marginBottom="128dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:background="@drawable/login_sign_background"

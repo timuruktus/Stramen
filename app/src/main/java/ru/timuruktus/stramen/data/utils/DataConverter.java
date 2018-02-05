@@ -22,6 +22,8 @@ import ru.timuruktus.stramen.models.entities.project_levels.ICard;
 import ru.timuruktus.stramen.models.entities.project_levels.IPreviewCard;
 import ru.timuruktus.stramen.models.entities.project_levels.IProject;
 import ru.timuruktus.stramen.models.entities.project_levels.ISubProject;
+import ru.timuruktus.stramen.models.entities.utilite_settings.IMark;
+import ru.timuruktus.stramen.models.entities.utilite_settings.IToDoList;
 import ru.timuruktus.stramen.models.entities.utilite_settings.Timer;
 
 public class DataConverter implements IDataConverter{
@@ -199,5 +201,53 @@ public class DataConverter implements IDataConverter{
         }.getType();
         List<IPreviewCard> previewCardsList = gson.fromJson(previewCardsString, type);
         return previewCardsList;
+    }
+
+    @TypeConverter
+    public String fromMarksListToString(List<IMark> marks){
+        if(marks == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        String json = gson.toJson(marks, type);
+        return json;
+    }
+
+    @TypeConverter
+    public List<IMark> fromStringToMarksList(String marksString){
+        if(marksString == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        List<IMark> marksList = gson.fromJson(marksString, type);
+        return marksList;
+    }
+
+    @TypeConverter
+    public String fromTodoListsToString(List<IToDoList> toDoLists){
+        if(toDoLists == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        String json = gson.toJson(toDoLists, type);
+        return json;
+    }
+
+    @TypeConverter
+    public List<IToDoList> fromStringToTodoLists(String toDoListsString){
+        if(toDoListsString == null){
+            return (null);
+        }
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<IProject>>(){
+        }.getType();
+        List<IToDoList> todoLists = gson.fromJson(toDoListsString, type);
+        return todoLists;
     }
 }
